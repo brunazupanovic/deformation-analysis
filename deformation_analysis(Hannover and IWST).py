@@ -310,7 +310,38 @@ def pregled_intervali_ispis(res1, res2, o, df_total, conf=0.95):
 
 pregled_intervali_ispis(res1, res2, o, df_total=df1 + df2, conf=0.95)
 
+# 1. Definiramo indekse stabilnih točaka prema PANDA izvještaju
+# To su A2, A3, O1, O2
+stabilni_idx = [0, 1, 2, 3]
+n_tocka = len(unknown_order)
+m_stab = len(stabilni_idx)
 
+# 2. Kreiramo  S-matricu
+S_han = np.eye(n_tocka)
+for i in range(n_tocka):
+    for j in stabilni_idx:
+        S_han[i, j] -= 1.0 / m_stab
+
+# 3. Transformiramo pomake (dz u Pandi)
+d_han = S_han @ d
+Qd_han = S_han @ Qd @ S_han.T
+
+print(        "\n--- REZULTATI HANNOVER LOKALIZACIJE  ---")
+print("\n" + "=" * 90)
+print(f"{' LOKALIZACIJA POMAKA ':^90}")
+print("=" * 90)
+
+# 2. Testiranje OBJEKTNIH točaka (onih koje pratimo)
+print(f"{'Br.':<5} {'Točka':<10} {'dz [mm]':>10} {'T-stat':>12} {'F-crit':>12} {'Rezultat':<15}")
+print("-" * 90)
+for i, name in enumerate(unknown_order):
+    dz_mm = d[i, 0] * 1000.0
+    Ti_han = (d_han[i, 0]**2) / (o * Qd_han[i, i])
+    status = "!!! POMAK !!!" if Ti_han > F_crit_panda else "Stabilna"
+    print(f"{i + 1:<5} {name:<10} {dz_mm:>10.2f} {Ti_han:>12.2f} {F_crit_panda:>12.2f} {status:<15}")
+
+
+W = np.eye(len(unknown_order))
 # grafovii
 # =========================================================================
 # GRAFIČKI PRIKAZ LOKALIZACIJE
@@ -323,7 +354,7 @@ def plot_panda_localisation(unknown_order, d, o, Qd, F_crit, object_points):
 
     # Izračun T-vrijednosti za sve točke radi grafa
     for i, name in enumerate(names):
-        T = (d[i, 0] ** 2) / (o * Qd[i, i])
+        T = (d_han[i, 0]**2) / (o * Qd_han[i, i])
         T_values.append(T)
 
 
@@ -370,35 +401,10 @@ def plot_panda_localisation(unknown_order, d, o, Qd, F_crit, object_points):
 plot_panda_localisation(unknown_order, d, o, Qd, F_crit_panda, object_points)
 
 
-
-# 1. Definiramo indekse stabilnih točaka prema PANDA izvještaju
-# To su A2, A3, O1, O2
-stabilni_idx = [0, 1, 2, 3]
-n_tocka = len(unknown_order)
-m_stab = len(stabilni_idx)
-
-# 2. Kreiramo  S-matricu
-S_han = np.eye(n_tocka)
-for i in range(n_tocka):
-    for j in stabilni_idx:
-        S_han[i, j] -= 1.0 / m_stab
-
-# 3. Transformiramo pomake (dz u Pandi)
-d_han = S_han @ d
-Qd_han = S_han @ Qd @ S_han.T
-
-print("\n--- REZULTATI HANNOVER LOKALIZACIJE  ---")
-for i, name in enumerate(unknown_order):
-    Ti_han = (d_han[i, 0]**2) / (o * Qd_han[i, i])
-    print(f"Točka {name}: dz = {d_han[i, 0]*1000:.2f} mm, T = {Ti_han:.2f}")
-
-W = np.eye(len(unknown_order))
-
-
 # IWST METODA - ITERATIVNI ISPIS SVIH KORAKA
 
 
-print("POKRETANJE IWST METODE (Iterative Weighted Similarity Transformation)")
+print(f"\nPOKRETANJE IWST METODE (Iterative Weighted Similarity Transformation)")
 
 d_iwst = d.copy()
 n_points = len(unknown_order)  #
@@ -429,10 +435,11 @@ for i in range(max_iter):
 
     weights = 1.0 / (np.abs(d_iwst.flatten()) + 1e-6)
     W = np.diag(weights)
-    "NOVE TEŽINE SU:"
+    print(f"\nNove težine nakon ieteracije su")
 
     for idx, name in enumerate(unknown_order):
-        print(f"{name}: {W[idx, idx]:.4f}")
+        print(f"Točka {name}: pomak={d_iwst[idx,0]:0.6f} m, težine= {W[idx, idx]:.4f}")
+
 
     # 4. Provjera konvergencije
     razlika = np.max(np.abs(d_iwst - d_old))
