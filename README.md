@@ -58,4 +58,4 @@ O4       | 100.3318   | 100.3305   | -1.34    | 50.03    | NESTABILNA (izbačena
 
 ```
 
-Dobiveni rezultati podudaraju se s rezultatima softwarea PANDA/DEFANA u izjednačenju iznosa pomaka i globalnome pomaku, do ne slaganja dolazi kod lokalizacije točaka, pošto PANDA koristi T-test dok je ovdje prisutan samo F-test.
+Dobiveni rezultati podudaraju se s rezultatima softvera PANDA/DEFANA u izjednačenju iznosa pomaka i globalnom pomaku, dok do neslaganja dolazi kod lokalizacije točaka, budući da PANDA koristi t-test, a u ovom je radu primijenjen samo F-test
