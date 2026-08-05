@@ -1,0 +1,131 @@
+{
+    "type": "FeatureCollection",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::3765"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    457700.0,
+                    5074620.0
+                ]
+            },
+            "properties": {
+                "Tocka": "A2",
+                "H_Epoha1_m": 100.00007,
+                "H_Epoha2_m": 100.00045,
+                "Pomak_mm": 0.38,
+                "Abs_Pomak_mm": 0.38,
+                "Smjer": "Dizanje (+)",
+                "F_test": 2.06,
+                "Status": "Stabilna"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    457719.901,
+                    5074623.29
+                ]
+            },
+            "properties": {
+                "Tocka": "A3",
+                "H_Epoha1_m": 99.95663,
+                "H_Epoha2_m": 99.95724,
+                "Pomak_mm": 0.6,
+                "Abs_Pomak_mm": 0.6,
+                "Smjer": "Dizanje (+)",
+                "F_test": 5.81,
+                "Status": "NESTABILNA (izbačena)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    457716.5,
+                    5074657.5
+                ]
+            },
+            "properties": {
+                "Tocka": "O1",
+                "H_Epoha1_m": 100.32225,
+                "H_Epoha2_m": 100.32309,
+                "Pomak_mm": 0.84,
+                "Abs_Pomak_mm": 0.84,
+                "Smjer": "Dizanje (+)",
+                "F_test": 26.02,
+                "Status": "NESTABILNA (izbačena)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    457736.3,
+                    5074656.0
+                ]
+            },
+            "properties": {
+                "Tocka": "O2",
+                "H_Epoha1_m": 100.30349,
+                "H_Epoha2_m": 100.30386,
+                "Pomak_mm": 0.37,
+                "Abs_Pomak_mm": 0.37,
+                "Smjer": "Dizanje (+)",
+                "F_test": 4.81,
+                "Status": "Stabilna"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    457736.9,
+                    5074664.4
+                ]
+            },
+            "properties": {
+                "Tocka": "O3",
+                "H_Epoha1_m": 100.26513,
+                "H_Epoha2_m": 100.26427,
+                "Pomak_mm": -0.85,
+                "Abs_Pomak_mm": 0.85,
+                "Smjer": "Slijeganje (-)",
+                "F_test": 20.35,
+                "Status": "NESTABILNA (izbačena)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    457718.0,
+                    5074665.7
+                ]
+            },
+            "properties": {
+                "Tocka": "O4",
+                "H_Epoha1_m": 100.33182,
+                "H_Epoha2_m": 100.33048,
+                "Pomak_mm": -1.34,
+                "Abs_Pomak_mm": 1.34,
+                "Smjer": "Slijeganje (-)",
+                "F_test": 50.03,
+                "Status": "NESTABILNA (izbačena)"
+            }
+        }
+    ]
+}
