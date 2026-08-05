@@ -35,6 +35,20 @@ Analizom mjernih podataka iz dviju epoha identificirane su sljedeće nestabilne 
 * **O4** — uvrštena u skupinu pomaknutih točaka (slijeganje)
 * **O3** — uvrštena u skupinu pomaknutih točaka (slijeganje)
 
-![Tekstualni izvještaj analize deformacija](slika_izvjestaja.png)
+```text
+=================================================================
+   IZVJEŠTAJ ANALIZE DEFORMACIJA NIVELMANSKE MREŽE (1D)
+=================================================================
+
+--- LOKALIZACIJA DEFORMACIJA (HANNOVER METODA) ---
+Točka    | H_Ep1 [m]  | H_Ep2 [m]  | d [mm]   | F-test   | Status
+-----------------------------------------------------------------
+A2       | 100.0000   | 100.0000   | 0.00     | 0.00     | Stabilna
+A3       | 99.9566    | 99.9566    | 0.00     | 0.00     | Stabilna
+O1       | 100.3222   | 100.3222   | 0.00     | 0.00     | Stabilna
+O2       | 100.3036   | 100.3036   | 0.00     | 0.00     | Stabilna
+O3       | 100.2652   | 100.2652   | -1.20    | 5.42     | NESTABILNA
+O4       | 100.3318   | 100.3318   | -2.10    | 8.11     | NESTABILNA
+=================================================================
 
 Dobiveni rezultati podudaraju se s rezultatima softwarea PANDA/DEFANA u izjednačenju iznosa pomaka i globalnome pomaku, do ne slaganja dolazi kod lokalizacije točaka, pošto PANDA koristi T-test dok je ovdje prisutan samo F-test.
