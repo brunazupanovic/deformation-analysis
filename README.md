@@ -37,8 +37,10 @@ Repozitorij obuhvaća slijedeće komponente:
 
 Analizom mjernih podataka iz dviju epoha identificirane su sljedeće nestabilne točke u mreži:
 
-* **O4** — uvrštena u skupinu pomaknutih točaka (slijeganje)
+* **A3** — uvrštena u skupinu pomaknutih točaka (izdizanje)
+* **O1** — uvrštena u skupinu pomaknutih točaka (izdizanje)
 * **O3** — uvrštena u skupinu pomaknutih točaka (slijeganje)
+* **O4** — uvrštena u skupinu pomaknutih točaka (slijeganje)
 
 ```text
 =================================================================
