@@ -43,13 +43,14 @@ Analizom mjernih podataka iz dviju epoha identificirane su sljedeće nestabilne 
 --- LOKALIZACIJA DEFORMACIJA (HANNOVER METODA) ---
 Točka    | H_Ep1 [m]  | H_Ep2 [m]  | d [mm]   | F-test   | Status
 -----------------------------------------------------------------
-A2       | 100.0000   | 100.0000   | 0.00     | 0.00     | Stabilna
-A3       | 99.9566    | 99.9566    | 0.00     | 0.00     | Stabilna
-O1       | 100.3222   | 100.3222   | 0.00     | 0.00     | Stabilna
-O2       | 100.3036   | 100.3036   | 0.00     | 0.00     | Stabilna
-O3       | 100.2652   | 100.2652   | -1.20    | 5.42     | NESTABILNA
-O4       | 100.3318   | 100.3318   | -2.10    | 8.11     | NESTABILNA
+A2       | 100.0001   | 100.0005   | 0.38     | 2.06     | Stabilna
+A3       | 99.9566    | 99.9572    | 0.60     | 5.81     | NESTABILNA (izbačena)
+O1       | 100.3223   | 100.3231   | 0.84     | 26.02    | NESTABILNA (izbačena)
+O2       | 100.3035   | 100.3039   | 0.37     | 4.81     | Stabilna
+O3       | 100.2651   | 100.2643   | -0.85    | 20.35    | NESTABILNA (izbačena)
+O4       | 100.3318   | 100.3305   | -1.34    | 50.03    | NESTABILNA (izbačena)
 =================================================================
+
 ```
 
 Dobiveni rezultati podudaraju se s rezultatima softwarea PANDA/DEFANA u izjednačenju iznosa pomaka i globalnome pomaku, do ne slaganja dolazi kod lokalizacije točaka, pošto PANDA koristi T-test dok je ovdje prisutan samo F-test.
