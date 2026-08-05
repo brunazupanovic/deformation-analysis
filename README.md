@@ -16,9 +16,9 @@ Repozitorij obuhvaća slijedeće komponente:
    - Automatski izvoz izračunatih pomaka u `.geojson` format za vizualizaciju u GIS okruženju (QGIS) te `.txt` izvještaj s numeričkim pokazateljima.
   
 2. **`deformation_analysis_Hannover_IWST.py` (Prethodna verzija koda):**
-   -Verzija koda koja provodi izjednačenje 1D mreže metodom najmanjih kvadrata i statističko testiranje
-   -Primjena Hannover i IWST metode za identifikaciju nestabilnih točaka referetne osnove
-   -Hannover metoda izbacuje nestabilne točke dok IWST metoda nestabilnim točkama smanjuje težinu i time ne utječe na geometriju mreže.
+   - Verzija koda koja provodi izjednačenje 1D mreže metodom najmanjih kvadrata i statističko testiranje
+   - Primjena Hannover i IWST metode za identifikaciju nestabilnih točaka referetne osnove
+   - Hannover metoda izbacuje nestabilne točke dok IWST metoda nestabilnim točkama smanjuje težinu i time ne utječe na geometriju mreže.
 
 4. **Popratne datoteke:**
    - `panda_report.pdf` — Izvorni izvještaji izjednačenja i deformacijske analize iz programa PANDA/DEFANA.
