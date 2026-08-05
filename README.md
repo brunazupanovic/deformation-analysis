@@ -33,5 +33,6 @@ Repozitorij obuhvaća slijedeće komponente:
 Analizom mjernih podataka iz dviju epoha identificirane su sljedeće nestabilne točke u mreži:
 - **O4** — uvrštena u skupinu pomaknutih točaka (slijeganje)
 - **O3** — uvrštena u skupinu pomaknutih točaka (slijeganje)
+![Tekstualni izvještaj analize deformacija](slika_izvjestaja.png)
 
 Dobiveni rezultati podudaraju se s rezultati softwara PANDA/DEFANA u izjednačenju iznosima pomaka i globalnome pomaku, do ne slaganja dolazi kod lokalizacije točaka, pošto PANDA koristi T-test dok je ovdje prisutan samo F-test.
