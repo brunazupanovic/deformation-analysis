@@ -1,26 +1,37 @@
-# Geodetic Deformation Analysis (Hannover & IWST)
+# Analiza deformacija nivelmanske mreže — Hannover metoda
 
-This repository contains a Python implementation of advanced geodetic methods for detecting and analyzing displacements in free networks.
+Ovaj repozitorij sadrži računalne programe pisane u programskom jeziku Python za izjednačenje 1D nivelmanske mreže po metodi najmanjih kvadrata te detekciju i lokalizaciju nestabilnih točaka u sklopu deformacijske analize (PANDA/DEFANA model).
 
-## Overview
-The project focuses on the statistical analysis of 1D (height) geodetic networks to distinguish between measurement noise and actual physical movement of object points.
+## Vizualizacija rezultata
 
-### Key Features:
-* **Network Adjustment:** Implements free network adjustment using the Moore-Penrose pseudoinverse.
-* **Hannover Method:** Statistical approach for outlier and displacement detection.
-* **IWST (Iterative Weighted Similarity Transformation):** An iterative algorithm for stable datum identification and localization of deformation.
-* **Visualization:** Graphical representation of vertical displacements using `matplotlib`.
+![Prikaz QGIS](Prikaz_QGIS.png)
 
-## Technical Details
-The algorithm is built using:
-* **NumPy:** For matrix algebra and linear systems.
-* **SciPy:** For statistical F-distributions and T-tests.
-* **Matplotlib:** For plotting the deformation results.
+## Sadržaj repozitorija
 
-## Future Improvements
-- [ ] Refactoring the code into an Object-Oriented Programming (OOP) structure.
-- [ ] Integration with QGIS for spatial visualization of displacement vectors.
-- [ ] Extending support to 2D/3D networks.
+Repozitorij obuhvaća slijedeće komponente:
 
-## Project Context
-This tool was verified against the **PANDA (PAN)** software report, ensuring the mathematical correctness of the Python implementation.
+1. **`deformacijska_analiza(OOP_20.07).py` (Glavna skripta):**
+   - Objektno-orijentirana arhitektura koda s klasama za unos mjerenja, izjednačenje metodom najmanjih kvadrata i statističko testiranje.
+   - Primjena Hannover metode za sukcesivnu identifikaciju i eliminaciju nestabilnih točaka iz referentne osnove.
+   - Automatski izvoz izračunatih pomaka u `.geojson` format za vizualizaciju u GIS okruženju (QGIS) te `.txt` izvještaj s numeričkim pokazateljima.
+
+2. **Popratne datoteke:**
+   - `panda_report.pdf` — Izvorni izvještaji izjednačenja i deformacijske analize iz programa PANDA/DEFANA.
+   - `deformacije_mreze.geojson` — Generirani vektorski sloj s vektorima pomaka za QGIS.
+   - `izvjestaj_deformacije.txt` — Tekstualni izvoz izračunatih parametara i statističkih testova.
+
+## Metodologija i statistički testovi
+
+- **Izjednačenje slobodne mreže:** Rješavanje rang-defekta mreže primjenom Moore-Penroseovog pseudo-inverza.
+- **Statistička analiza:**
+  - Test homogenosti varijanci iz dviju epoha mjerenja .
+  - Globalni test deformacija mreže.
+  - Hannoverska lokalizacija pomaka pojedinih točaka uz zadanu razinu značajnosti $\alpha = 0.05$.
+
+## Rezultati analize
+
+Analizom mjernih podataka iz dviju epoha identificirane su sljedeće nestabilne točke u mreži:
+- **O4** — uvrštena u skupinu pomaknutih točaka (slijeganje)
+- **O3** — uvrštena u skupinu pomaknutih točaka (slijeganje)
+
+Dobiveni rezultati podudaraju se s rezultati softwara PANDA/DEFANA u izjednačenju iznosima pomaka i globalnome pomaku, do ne slaganja dolazi kod lokalizacije točaka, pošto PANDA koristi T-test dok je ovdje prisutan samo F-test.
