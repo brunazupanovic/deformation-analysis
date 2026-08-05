@@ -14,6 +14,7 @@ Repozitorij obuhvaća slijedeće komponente:
    - Objektno-orijentirana arhitektura koda s klasama za unos mjerenja, izjednačenje metodom najmanjih kvadrata i statističko testiranje.
    - Primjena Hannover metode za sukcesivnu identifikaciju i eliminaciju nestabilnih točaka iz referentne osnove.
    - Automatski izvoz izračunatih pomaka u `.geojson` format za vizualizaciju u GIS okruženju (QGIS) te `.txt` izvještaj s numeričkim pokazateljima.
+* `deformation_analysis_Hannover_IWST.py` — Prethodna verzija koda.
 
 2. **Popratne datoteke:**
    - `panda_report.pdf` — Izvorni izvještaji izjednačenja i deformacijske analize iz programa PANDA/DEFANA.
