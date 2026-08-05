@@ -50,5 +50,6 @@ O2       | 100.3036   | 100.3036   | 0.00     | 0.00     | Stabilna
 O3       | 100.2652   | 100.2652   | -1.20    | 5.42     | NESTABILNA
 O4       | 100.3318   | 100.3318   | -2.10    | 8.11     | NESTABILNA
 =================================================================
+```
 
 Dobiveni rezultati podudaraju se s rezultatima softwarea PANDA/DEFANA u izjednačenju iznosa pomaka i globalnome pomaku, do ne slaganja dolazi kod lokalizacije točaka, pošto PANDA koristi T-test dok je ovdje prisutan samo F-test.
